@@ -9,13 +9,16 @@
 </head>
 <body>
 
-  <script type="text/x-handlebars" data-template-name="index">
-    <h2>Welcome to Ember.js</h2>
-    <ul>
-    {{#each item in content}}
-        <li>{{item}}</li>
-    {{/each}}
-     </ul>
+  <script type="text/x-handlebars">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Bloggr</a>
+        <ul class="nav">
+          <li><a href='#'>Posts</a></li>
+          <li><a href='#'>About</a></li>
+        </ul>
+      </div>
+    </div>
   </script>
 
   <script src="js/libs/jquery-1.9.1.js"></script>
