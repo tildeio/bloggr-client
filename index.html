@@ -46,6 +46,13 @@
   </script>
 
   <script type="text/x-handlebars" id="post">
+    {{#if isEditing}}
+      {{partial 'post/edit'}}
+      <button {{action 'doneEditing'}}>Done</button>
+    {{else}}
+      <button {{action 'edit'}}>Edit</button>
+    {{/if}}
+
     <h1>{{title}}</h1>
     <h2>by {{author}} <small class='muted'>({{date publishedAt}})</small></h2>
 
@@ -58,6 +65,12 @@
     <div class='below-the-fold'>
       {{markdown extended}}
     </div>
+  </script>
+
+  <script type="text/x-handlebars" id="post/_edit">
+    <p>{{view Ember.TextField valueBinding='title'}}</p>
+    <p>{{view Ember.TextArea valueBinding='intro'}}</p>
+    <p>{{view Ember.TextArea valueBinding='extended'}}</p>
   </script>
 
   <script type="text/x-handlebars" id="about">

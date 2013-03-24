@@ -18,6 +18,18 @@ App.PostsRoute = Ember.Route.extend({
   }
 });
 
+App.PostController = Ember.ObjectController.extend({
+  isEditing: false,
+
+  edit: function() {
+    this.set('isEditing', true);
+  },
+
+  doneEditing: function() {
+    this.set('isEditing', false);
+  }
+});
+
 var attr = DS.attr;
 
 App.Post = DS.Model.extend({
