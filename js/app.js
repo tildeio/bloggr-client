@@ -43,3 +43,7 @@ App.Post.FIXTURES = [{
   intro: "My [appearance on the Ruby Rogues podcast](http://rubyrogues.com/056-rr-david-heinemeier-hansson/) recently came up for discussion again on the private Parley mailing list.",
   extended: "A long list of topics were raised and I took a time to ramble at large about all of them at once. Apologies for not taking the time to be more succinct, but at least each topic has a header so you can skip stuff you don't care about.\n\n### Maintainability\n\nIt's simply not true to say that I don't care about maintainability. I still work on the oldest Rails app in the world."  
 }];
+
+Ember.Handlebars.registerBoundHelper('date', function(date) {
+  return moment(date).fromNow();
+});
