@@ -7,6 +7,13 @@ App.Store = DS.Store.extend({
 
 App.Router.map(function() {
   this.resource('about');
+  this.resource('posts');
+});
+
+App.PostsRoute = Ember.Route.extend({
+  model: function() {
+    return App.Post.find();
+  }
 });
 
 var attr = DS.attr;

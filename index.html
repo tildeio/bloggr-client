@@ -14,13 +14,34 @@
       <div class="navbar-inner">
         <a class="brand" href="#">Bloggr</a>
         <ul class="nav">
-          <li><a href='#'>Posts</a></li>
+          <li>{{#linkTo 'posts'}}Posts{{/linkTo}}</li>
           <li>{{#linkTo 'about'}}About{{/linkTo}}</li>
         </ul>
       </div>
     </div>
 
     {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="posts">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <table class='table'>
+            <thead>
+              <tr><th>Recent Posts</th></tr>
+            </thead>
+            {{#each model}}
+            <tr><td>
+              <a href='#'>{{title}} <small class='muted'>by {{author}}</small></a>
+            </td></tr>
+            {{/each}}
+          </table>
+        </div>
+        <div class="span9">
+        </div>
+      </div>
+    </div>
   </script>
 
   <script type="text/x-handlebars" id="about">
