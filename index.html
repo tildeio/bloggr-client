@@ -33,14 +33,30 @@
             </thead>
             {{#each model}}
             <tr><td>
-              <a href='#'>{{title}} <small class='muted'>by {{author}}</small></a>
+              {{#linkTo 'post' this}}{{title}} <small class='muted'>by {{author}}</small>{{/linkTo}}
             </td></tr>
             {{/each}}
           </table>
         </div>
         <div class="span9">
+          {{outlet}}
         </div>
       </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="post">
+    <h1>{{title}}</h1>
+    <h2>by {{author}} <small class='muted'>({{publishedAt}})</small></h2>
+
+    <hr>
+
+    <div class='intro'>
+      {{intro}}
+    </div>
+
+    <div class='below-the-fold'>
+      {{extended}}
     </div>
   </script>
 

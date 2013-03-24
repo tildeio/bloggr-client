@@ -7,7 +7,9 @@ App.Store = DS.Store.extend({
 
 App.Router.map(function() {
   this.resource('about');
-  this.resource('posts');
+  this.resource('posts', function() {
+    this.resource('post', { path: ':post_id' });
+  });
 });
 
 App.PostsRoute = Ember.Route.extend({
