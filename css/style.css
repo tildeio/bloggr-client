@@ -2,22 +2,3 @@
 html, body {
     margin: 20px;
 }
-
-a {
-  cursor: pointer;
-}
-
-.navbar .nav > li > a.active {
-  color: black;
-  font-weight: bold;
-}
-
-.about {
-  padding-bottom: 15px;
-  width: 700px;
-}
-
-.about + .about {
-  padding-top: 25px;
-  border-top: 1px solid #000;
-}

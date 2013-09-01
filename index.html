@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
+<meta charset="utf-8">
 <title>Ember Starter Kit</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -14,8 +14,8 @@
       <div class="navbar-inner">
         <a class="brand" href="#">Bloggr</a>
         <ul class="nav">
-          <li>{{#linkTo 'posts'}}Posts{{/linkTo}}</li>
-          <li>{{#linkTo 'about'}}About{{/linkTo}}</li>
+          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
         </ul>
       </div>
     </div>
@@ -33,7 +33,7 @@
             </thead>
             {{#each model}}
             <tr><td>
-              {{#linkTo 'post' this}}{{title}} <small class='muted'>by {{author}}</small>{{/linkTo}}
+                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
             </td></tr>
             {{/each}}
           </table>
@@ -58,23 +58,23 @@
     {{/if}}
 
     <h1>{{title}}</h1>
-    <h2>by {{author}} <small class='muted'>({{date publishedAt}})</small></h2>
+    <h2>by {{author.name}} <small class='muted'>({{format-date date}})</small></h2>
 
     <hr>
 
     <div class='intro'>
-      {{markdown intro}}
+      {{format-markdown excerpt}}
     </div>
 
     <div class='below-the-fold'>
-      {{markdown extended}}
+      {{format-markdown body}}
     </div>
   </script>
 
   <script type="text/x-handlebars" id="post/_edit">
-    <p>{{view Ember.TextField valueBinding='title'}}</p>
-    <p>{{view Ember.TextArea valueBinding='intro'}}</p>
-    <p>{{view Ember.TextArea valueBinding='extended'}}</p>
+    <p>{{input type="text" value=title}}</p>
+    <p>{{input type="text" value=excerpt}}</p>
+    <p>{{textarea value=body}}</p>
   </script>
 
   <script type="text/x-handlebars" id="about">
@@ -99,13 +99,11 @@
   </script>
 
   <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-master.js"></script>
-  <script src="js/libs/ember-data-master.js"></script>
-  <script src="js/libs/showdown.js"></script>
-  <script src="js/libs/moment.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.8.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
   <script src="js/app.js"></script>
 
 </body>
 </html>
-
