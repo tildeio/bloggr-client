@@ -31,11 +31,13 @@
             <thead>
               <tr><th>Recent Posts</th></tr>
             </thead>
-            {{#each model}}
-            <tr><td>
-                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
-            </td></tr>
-            {{/each}}
+            <tbody>
+              {{#each model}}
+              <tr><td>
+                  {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
+              </td></tr>
+              {{/each}}
+            </tbody>
           </table>
         </div>
         <div class="span9">
