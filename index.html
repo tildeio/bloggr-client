@@ -33,10 +33,10 @@
             </thead>
 
             <tbody>
-              {{#each model}}
+              {{#each post in model}}
                 <tr>
                   <td>
-                    {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
+                    {{#link-to 'post' post}}{{post.title}} <small class='muted'>by {{post.author.name}}</small>{{/link-to}}
                   </td>
                 </tr>
               {{/each}}
