@@ -35,7 +35,7 @@ App.PostRoute = Ember.Route.extend({
   }
 });
 
-App.PostController = Ember.ObjectController.extend({
+App.PostController = Ember.Controller.extend({
   isEditing: false,
   
   actions: {
